@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Snake Game</title>
+</head>
+<body>
+    <div class="grandFather">
+        <div >
+            <p class="p">What do you want to do?</p>
+            <div class="divCheckbox">
+                <input type="checkbox" id="discoverResistance">
+                <label>Discover the resistance of a resistor</label>
+                <input type="checkbox" id="discoverColors" class="input">
+                <label>Discover the colors of a resistance value</label>
+            </div>
+        </div>
+        <form class="checkBoxes" id="idForm">
+        </form>
+        <div class="divGrandfather">
+            <div class="divFather">
+            </div>
+         <input type="submit" value="Send" id="btnSend"></input>
+         <input type="submit" value="Reset" id="btnClean"></input>
+        </div>
+    </div>
+       <p id="resistanceValue"></p>
+    <canvas width="540" height="240"></canvas>
+    <p id="colorCodes">Color codes</p>
+    <table id="table">
+        <tr style="background-color: #FFFFFF; color: black;">
+            <th>Color</th>
+            <th>First Band</th>
+            <th>Second Band</th>
+            <th>Third Band</th>
+            <th>Multiplier</th>
+            <th>Tolerance</th>
+        </tr>
+        <tr style="background-color: #1f1e1eff; color: white;">
+            <td>Black</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>X 1 &#8486</td>
+            <td></td>
+        </tr>
+        <tr style="background-color: #6b3a3a; color: black;">
+            <td>Brown</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>X 10 &#8486</td>
+            <td>+/- 1%</td>
+        </tr>
+        <tr style="background-color: #fa1a1aff; color: black;">
+            <td>Red</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>X 100 &#8486</td>
+            <td>+/- 2%</td>
+        </tr>
+        <tr style="background-color: #f56f42; color: black;">
+            <td>Orange</td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+            <td>X 1 K&#8486</td>
+            <td></td>
+        </tr>
+        <tr style="background-color: #efff17; color: black;">
+            <td>Yellow</td>
+            <td>4</td>
+            <td>4</td>
+            <td>4</td>
+            <td>X 10 K&#8486</td>
+            <td></td>
+        </tr>
+        <tr style="background-color: #31e31e; color: black;">
+            <td>Green</td>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+            <td>X 100 K&#8486</td>
+            <td>+/- 0.5%</td>
+        </tr>
+        <tr style="background-color: #0000ff; color: black;">
+            <td>Blue</td>
+            <td>6</td>
+            <td>6</td>
+            <td>6</td>
+            <td>X 1 M&#8486</td>
+            <td>+/- 0.25%</td>
+        </tr>
+        <tr style="background-color: #dd42f5; color: black;">
+            <td>Violet</td>
+            <td>7</td>
+            <td>7</td>
+            <td>7</td>
+            <td>X 10 M&#8486</td>
+            <td>+/- 0.1%</td>
+        </tr>
+        <tr style="background-color: #665f5fff; color: black;">
+            <td>Gray</td>
+            <td>8</td>
+            <td>8</td>
+            <td>8</td>
+            <td></td>
+            <td>+/- 0.05%</td>
+        </tr>
+        <tr style="background-color: #FFFFFF; color: black;">
+            <td>White</td>
+            <td>9</td>
+            <td>9</td>
+            <td>9</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="background-color: #d4af37; color: black;">
+            <td>Gold</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X 0.1 &#8486</td>
+            <td>+/- 5%</td>
+        </tr>
+        <tr style="background-color: #c0c0c0; color: black;">
+            <td>Silver</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X 0.01 &#8486</td>
+            <td>+/- 10%</td>
+        </tr>
+
+       
+    </table>
+</body>
+<script src="./js/script.js"></script>
+</html>

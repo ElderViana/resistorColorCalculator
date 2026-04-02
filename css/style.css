@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppings', sans-serif;
+ 
+
+}
+#resistanceValue, .p {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 10px;
+    margin-top: 60px;
+}
+.p{
+     margin-top: 40px;
+}
+#numberColors, #numberOfColor4, #numberOfColor5, #numberOfColor6{
+    margin-bottom: 20px;
+}
+
+body{
+    background-color: #191919;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+
+ 
+ 
+}
+
+body::before {
+content: "";
+background-image: url(/img/img2.jpg);
+background-size: 100%;
+background-position: center;
+opacity: 0.2;
+
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+min-height: 100%;
+z-index: -5;
+}
+
+canvas {
+    background-color: black;
+}
+
+.divFather {
+   display: flex;
+   margin-left: 20px;
+   margin-right: 20px;
+   justify-content: space-between;
+
+   
+    
+}
+
+.divChild {
+    margin-bottom: 100px;
+    border-radius: 20px;
+}
+
+.grandFather {
+    margin-top: 150px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgb(116, 158, 172), 0 3px 10px 0 rgb(45, 172, 214);
+    width: auto;
+    height: auto;
+   
+
+}
+
+
+
+
+.divCheckbox, form{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.divCheckbox{
+   margin-bottom: 20px;
+}
+
+#btnClean  {
+    padding: 2px 10px 2px 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 20px;
+    
+}
+#btnSend {
+    padding: 2px 10px 2px 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+select {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgb(46, 149, 184), 0 1px 10px 0 rgb(2, 67, 88);
+    padding: 2px 2px 5px 5px;
+    margin-left: 20px;
+}
+
+input{
+    border-radius: 10px;
+    padding: 2px 2px 5px 5px;
+    
+    
+}
+
+#colorCodes{
+    margin-top: 50px;;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+table{
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin-bottom: 50px;
+   
+}
+
+th, td{
+     border: 1px solid black;
+     width: 120px;
+     text-align: center;
+    
+}
+
+#discoverColors, #numberOfColor5, #numberOfColor6{
+    margin-left: 20px;
+}
