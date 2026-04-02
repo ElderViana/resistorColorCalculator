@@ -40,7 +40,10 @@ body{
 
 body::before {
 content: "";
+/*
 background-image: url(/img/img2.jpg);
+*/
+background-image: url(img2.jpg);
 background-size: 100%;
 background-position: center;
 opacity: 0.2;
