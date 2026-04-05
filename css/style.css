@@ -274,11 +274,11 @@ select {
  #idTemperatureCoefficient, 
  #idUnitMeasure,
  select,
- .divCheckbox,
  #discoverColors,
  .divFather,
  #btnSend,
- #btnClean{
+ #btnClean,
+ #discoverResistance{
     margin-left: 10px;
  }
 
