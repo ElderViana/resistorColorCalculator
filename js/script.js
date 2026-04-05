@@ -130,16 +130,27 @@ const colors = [
 ];
 
 const createInputsColors = () => {
+  const divColor4 = document.createElement("div");
+  const divColorFather = document.createElement("div");
   const numberOfColor4 = document.createElement("input");
   const label4 = document.createElement("label");
+
+  const divColor5 = document.createElement("div");
   const numberOfColor5 = document.createElement("input");
   const label5 = document.createElement("label");
+
+  const divColor6 = document.createElement("div");
   const numberOfColor6 = document.createElement("input");
   const label6 = document.createElement("label");
   const p = document.createElement("p");
 
   p.textContent = "How many color bands does the resistor have?";
-  p.id = "numberColors"
+  p.id = "pNumberColors"
+
+  divColor4.className = "boxColors";
+  divColor5.className = "boxColors";
+  divColor6.className = "boxColors";
+  divColorFather.className = "divColorFather";
 
   numberOfColor4.type = "checkbox";
   numberOfColor4.id = "numberOfColor4";
@@ -154,12 +165,19 @@ const createInputsColors = () => {
   label6.textContent = " Six colors ";
 
   formCheckBoxes.appendChild(p);
-  formCheckBoxes.appendChild(numberOfColor4);
-  formCheckBoxes.appendChild(label4);
-  formCheckBoxes.appendChild(numberOfColor5);
-  formCheckBoxes.appendChild(label5);
-  formCheckBoxes.appendChild(numberOfColor6);
-  formCheckBoxes.appendChild(label6);
+  formCheckBoxes.appendChild(divColorFather);
+
+  divColorFather.appendChild(divColor4);
+  divColor4.appendChild(numberOfColor4);
+  divColor4.appendChild(label4);
+
+  divColorFather.appendChild(divColor5);
+  divColor5.appendChild(numberOfColor5);
+  divColor5.appendChild(label5);
+
+  divColorFather.appendChild(divColor6);
+  divColor6.appendChild(numberOfColor6);
+  divColor6.appendChild(label6);
 
   const unSelectInputColors = (input) => {
     if (input === numberOfColor4) {
@@ -751,7 +769,11 @@ const createselectedColors = () => {
     }
     const calculateResistance = () => {
       const pResistanceValue = document.querySelector("#resistanceValue");
+      const pToleranceValue = document.querySelector("#toleranceValue");
+      const pTemperatureCoefficientValue = document.querySelector("#temperatureCoefficientValue");
       let resistanceValue = "";
+      let toleranceValue = "";
+      let temperatureCoefficientValue = "";
 
       if (numberOfColor4.checked === true) {
         for (let i = 0; i < selectedColors.length; i++) {
@@ -860,7 +882,8 @@ const createselectedColors = () => {
                 break;
               case 3: //Fourth color band
                 if (color.color === selectedColors[i].value) {
-                  resistanceValue = `Resistance: ${resistanceValue} | Tolerance: ${color.tolerance}`
+                  resistanceValue = `Resistance: ${resistanceValue}`
+                  toleranceValue = `Tolerance: ${color.tolerance}`
                 }
                 break;
             }
@@ -980,7 +1003,8 @@ const createselectedColors = () => {
                 break;
               case 4: //Fifth color band
                 if (color.color === selectedColors[i].value) {
-                    resistanceValue = `Resistance: ${resistanceValue} | Tolerance: ${color.tolerance}`
+                  resistanceValue = `Resistance: ${resistanceValue}`
+                  toleranceValue = `Tolerance: ${color.tolerance}`
                 }
                 break;
             }
@@ -1100,12 +1124,13 @@ const createselectedColors = () => {
                 break;
               case 4: //Fifth color band
                 if (color.color === selectedColors[i].value) {
-                  resistanceValue += " " + " | Tolerance: " + color.tolerance;
+                  resistanceValue = `Resistance: ${resistanceValue}`
+                  toleranceValue = `Tolerance: ${color.tolerance}`
                 }
                 break;
               case 5: //Sixth color band
                 if (color.color === selectedColors[i].value) {
-                  resistanceValue += " " + " | Temperature coefficient: " + color.temperatureCoefficient;
+                  temperatureCoefficientValue = `Temperature coefficient: ${color.temperatureCoefficient}`
                  
                 }
                 break;
@@ -1113,7 +1138,8 @@ const createselectedColors = () => {
           });
         }
       }
-      return (pResistanceValue.textContent = resistanceValue);
+      return (pResistanceValue.textContent = resistanceValue, pToleranceValue.textContent = toleranceValue, 
+          pTemperatureCoefficientValue.textContent = temperatureCoefficientValue);
     };
     calculateResistance();
 
@@ -1157,9 +1183,16 @@ const reset = () => {
 
 const discoverColorsResistanceValue = () => {
   const pResistanceValue2 = document.querySelector("#resistanceValue");
+  const pToleranceValue2 = document.querySelector("#toleranceValue");
+  const pTemperatureCoefficientValue2 = document.querySelector("#temperatureCoefficientValue");
+
   let resistanceValue = "";
+  let toleranceValue = "";
+  let temperatureCoefficientValue = "";
+
   const input = document.createElement("input");
   input.placeholder = "Resistance value";
+  input.id = "inputResistance"
 
   formCheckBoxes.appendChild(input);
 
@@ -1405,8 +1438,10 @@ const discoverColorsResistanceValue = () => {
         selectedColors2.push(temperatureCoefficien.color);
       }
     });
-    resistanceValue = `Resistance: ${input.value + selectUnitMeasure.value} | Tolerance: ${selectTolerance.value} |
-      Temperature coefficient: ${selectTemperatureCoefficient.value}`;
+    resistanceValue = `Resistance: ${input.value + selectUnitMeasure.value}`
+    toleranceValue = `Tolerance ${selectTolerance.value}`
+    temperatureCoefficientValue = `Temperature coefficient: ${selectTemperatureCoefficient.value}`
+     
 
     if (input.value.length == 2 || input.value[1] == ".") {
       drawLeadsResistor(120, 420);
@@ -1427,7 +1462,8 @@ const discoverColorsResistanceValue = () => {
       drawResistor2(150, 150);
       drawBands(6);
     }
-    return pResistanceValue2.textContent = resistanceValue;
+    return (pResistanceValue2.textContent = resistanceValue, pToleranceValue2.textContent = toleranceValue, 
+        pTemperatureCoefficientValue2.textContent = temperatureCoefficientValue);
   };
 
   btnSend.removeEventListener("click", discoverColorsResistanceValue);

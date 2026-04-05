@@ -13,10 +13,16 @@
         <div >
             <p class="p">What do you want to do?</p>
             <div class="divCheckbox">
-                <input type="checkbox" id="discoverResistance">
-                <label>Discover the resistance of a resistor</label>
-                <input type="checkbox" id="discoverColors" class="input">
-                <label>Discover the colors of a resistance value</label>
+                <div class="check1">
+                    <input type="checkbox" id="discoverResistance">
+                    <label>Discover the resistance of a resistor</label>
+                </div>
+                <div class="check1">
+                    <input type="checkbox" id="discoverColors" class="input">
+                    <label>Discover the colors of a resistance value</label>
+                </div>
+               
+                
             </div>
         </div>
         <form class="checkBoxes" id="idForm">
@@ -28,8 +34,16 @@
          <input type="submit" value="Reset" id="btnClean"></input>
         </div>
     </div>
-       <p id="resistanceValue"></p>
-    <canvas width="540" height="240"></canvas>
+        <div>
+             <p id="resistanceValue"></p>
+        </div>
+        <div>
+            <p id="toleranceValue"></p>
+        </div>
+        <div>
+            <p id="temperatureCoefficientValue"></p>
+        </div>
+    <canvas class="canvas" width="540" height="240"></canvas>
     <p id="colorCodes">Color codes</p>
     <table id="table">
         <tr style="background-color: #FFFFFF; color: black;">
