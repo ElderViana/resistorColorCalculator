@@ -6,7 +6,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppings', sans-serif;
+    font-family: 'Poppins', sans-serif;
+   
  
 
 }
@@ -179,6 +180,7 @@ th, td{
    justify-content: space-between;
    height: auto;  
    width: 50%;
+   background-color: aqua;
 }
 
  .divColorFather,
@@ -202,7 +204,9 @@ th, td{
 }
 
 
-@media only screen and (Max-width: 400px){
+@media only screen and (max-width: 600px){
+
+
 
      .divColorFather{
         display: block;
@@ -281,5 +285,52 @@ select {
  #discoverResistance{
     margin-left: 10px;
  }
+
+
+body{
+    background-color: #191919;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    width: 100vh;
+    
+
+ 
+ 
+}
+
+body::before {
+content: "";
+/*
+background-image: url(/img/img2.jpg);
+*/
+background-image: url(img2.jpg);
+background-size: 100%;
+background-position: center;
+opacity: 0.2;
+
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+min-height: 100%;
+z-index: -5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
