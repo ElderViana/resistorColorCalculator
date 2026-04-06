@@ -1440,8 +1440,11 @@ const discoverColorsResistanceValue = () => {
     });
     resistanceValue = `Resistance: ${input.value + selectUnitMeasure.value}`
     toleranceValue = `Tolerance: ${selectTolerance.value}`
-    if(selectTemperatureCoefficient.value != ""){
+    if(selectTemperatureCoefficient.value != "" && input.value.length > 2){
       temperatureCoefficientValue = `Temperature coefficient: ${selectTemperatureCoefficient.value}`
+    }
+    if(selectTemperatureCoefficient.value != "" && input.value.length <= 2){
+      alert(message2);
     }
      
 
