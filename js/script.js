@@ -300,6 +300,12 @@ const drawBands = (number) => {
         i += 43;
       }
     }
+
+    for( i = 0; i < selectedColors.length; i++){
+      if(selectedColors[i].value == ""){
+        return(alert("Please, select all colors!"));
+      }
+    }
   }
 
   if (number === 5) {
@@ -349,6 +355,11 @@ const drawBands = (number) => {
 
       if (i == 278) {
         i += 33;
+      }
+    }
+    for( i = 0; i < selectedColors.length; i++){
+      if(selectedColors[i].value == ""){
+        return(alert("Please, select all colors!"));
       }
     }
   }
@@ -411,6 +422,13 @@ const drawBands = (number) => {
         i += 31;
       }
     }
+
+    for( i = 0; i < selectedColors.length; i++){
+        if(selectedColors[i].value == ""){
+          return(alert("Please, select all colors!"));
+      }
+    }
+  
   }
 };
 
@@ -521,7 +539,6 @@ const createselectedColors = () => {
         }
       });
       selectedColors.push(select);
-      console.log(select)
     
     }
 
@@ -791,8 +808,15 @@ const createselectedColors = () => {
                 break;
               case 2: //Third color band
                 if (color.color === selectedColors[i].value) {
-                  resistanceValue =
-                    parseInt(resistanceValue) * color.multiplier;
+                    if(color.multiplier ==  10 ** -1 || color.multiplier ==  10 ** -2){
+                      resistanceValue =
+                        (parseInt(resistanceValue) * color.multiplier).toFixed(2);
+                        
+                    }else{
+                      resistanceValue =
+                        parseInt(resistanceValue) * color.multiplier;
+                    }
+                        
 
                   resistanceValue = resistanceValue.toString();
                   if (resistanceValue < 1000) {
@@ -912,8 +936,14 @@ const createselectedColors = () => {
                 break;
               case 3: //Fourth color band
                 if (color.color === selectedColors[i].value) {
-                  resistanceValue =
-                    parseInt(resistanceValue) * color.multiplier;
+                  
+                    if(color.multiplier ==  10 ** -1 || color.multiplier ==  10 ** -2){
+                      resistanceValue =
+                        (parseInt(resistanceValue) * color.multiplier).toFixed(2);
+                    }else{
+                      resistanceValue =
+                        parseInt(resistanceValue) * color.multiplier;
+                    }
 
                   resistanceValue = resistanceValue.toString();
                   if (resistanceValue < 1000) {
@@ -998,12 +1028,13 @@ const createselectedColors = () => {
                   ) {
                     resistanceValue =
                       resistanceValue / 1000000000 + color.unitMeasure;
+                      
                   }
                 }
                 break;
               case 4: //Fifth color band
                 if (color.color === selectedColors[i].value) {
-                  resistanceValue = `Resistance: ${resistanceValue}`
+                  resistanceValue = `Resistance: ${(resistanceValue)}`
                   toleranceValue = `Tolerance: ${color.tolerance}`
                 }
                 break;
@@ -1033,8 +1064,13 @@ const createselectedColors = () => {
                 break;
               case 3: //Fourth color band
                 if (color.color === selectedColors[i].value) {
-                  resistanceValue =
-                    parseInt(resistanceValue) * color.multiplier;
+                    if(color.multiplier ==  10 ** -1 || color.multiplier ==  10 ** -2){
+                      resistanceValue =
+                        (parseInt(resistanceValue) * color.multiplier).toFixed(2);
+                    }else{
+                      resistanceValue =
+                        parseInt(resistanceValue) * color.multiplier;
+                    }
 
                   resistanceValue = resistanceValue.toString();
                   if (resistanceValue < 1000) {
@@ -1138,7 +1174,7 @@ const createselectedColors = () => {
           });
         }
       }
-      return (pResistanceValue.textContent = resistanceValue, pToleranceValue.textContent = toleranceValue, 
+      return (pResistanceValue.textContent = resistanceValue , pToleranceValue.textContent = toleranceValue, 
           pTemperatureCoefficientValue.textContent = temperatureCoefficientValue);
     };
     calculateResistance();
@@ -1346,7 +1382,7 @@ const discoverColorsResistanceValue = () => {
         return alert(message2);
       }
     }
-    if (input.value.length == 4) {
+    if (input.value.length > 4) {
       return alert(message2);
     }
 
